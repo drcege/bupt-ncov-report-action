@@ -42,3 +42,7 @@ on:
 
 格式是标准的 cron 格式，第一个数字代表分钟，第二个数字代表小时。例如，`0 1 * * *` 表示在每天
 格林尼治时间的 1:00 AM，也就是在北京时间的 9:00 AM 自动运行。
+
+## FAQ
+
+如果请求超时，需要浏览器中登录 https://app.bupt.edu.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.bupt.edu.cn%2Fncov%2Fwap%2Fdefault%2Findex

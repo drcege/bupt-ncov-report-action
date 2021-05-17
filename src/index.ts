@@ -42,9 +42,10 @@ async function getDailyReportFormData(
         throw new Error("登录失败；请检查用户名与密码是否正确");
     }
     const newForm: DailyReportForm = JSON.parse(
-        /var def = (\{.+\});/.exec(response.body)?.[1] ?? ""
+        /var def = (\{.+\})/.exec(response.body)?.[1] ?? ""
     );
     console.log(response.body)
+    console.log(newForm)
     const oldForm: DailyReportForm = JSON.parse(
         /oldInfo: (\{.+\}),/.exec(response.body)?.[1] ?? ""
     );

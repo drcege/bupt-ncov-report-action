@@ -46,12 +46,12 @@ async function getDailyReportFormData(
     const newForm: DailyReportForm = JSON.parse(
         /var def = (\{.+\})/.exec(response.body)?.[1] ?? ""
     );
-    console.log("newForm = " + newForm);
+    console.log("newForm:", newForm);
         
     const oldForm: DailyReportForm = JSON.parse(
         /oldInfo: (\{.+\}),/.exec(response.body)?.[1] ?? ""
     );
-    console.log("oldForm = " + oldForm);
+    console.log("oldForm:", oldForm);
 
     if (oldForm.geo_api_info === undefined) {
         throw new Error("昨天的信息不完整；请手动填报一天后继续使用本脚本");

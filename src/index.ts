@@ -41,14 +41,17 @@ async function getDailyReportFormData(
     if (response.body.indexOf("登录") != -1) {
         throw new Error("登录失败；请检查用户名与密码是否正确");
     }
+    //console.log(response.body)
+
     const newForm: DailyReportForm = JSON.parse(
         /var def = (\{.+\})/.exec(response.body)?.[1] ?? ""
     );
-    console.log(response.body)
-    console.log(newForm)
+    console.log("newForm = " + newForm);
+        
     const oldForm: DailyReportForm = JSON.parse(
         /oldInfo: (\{.+\}),/.exec(response.body)?.[1] ?? ""
     );
+    console.log("oldForm = " + oldForm);
 
     if (oldForm.geo_api_info === undefined) {
         throw new Error("昨天的信息不完整；请手动填报一天后继续使用本脚本");

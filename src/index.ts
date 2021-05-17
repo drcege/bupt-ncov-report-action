@@ -44,6 +44,7 @@ async function getDailyReportFormData(
     const newForm: DailyReportForm = JSON.parse(
         /var def = (\{.+\});/.exec(response.body)?.[1] ?? ""
     );
+    console.log(response.body)
     const oldForm: DailyReportForm = JSON.parse(
         /oldInfo: (\{.+\}),/.exec(response.body)?.[1] ?? ""
     );
